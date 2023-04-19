@@ -10,13 +10,13 @@ export default function Details() {
 
   const { id } = useParams();
 
-  const allData = [].concat(
+  const alldata = [].concat(
     data.accessory.items,
     data.fashion.items,
     data.digital.items
   );
 
-  const foundItem = allData.find((item) => {
+  const foundItem = alldata.find((item) => {
     return item.id === parseInt(id);
   });
 

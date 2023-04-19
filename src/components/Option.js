@@ -5,7 +5,7 @@ import { BsCart } from "react-icons/bs";
 import { UserInfoContextStore } from "./UserInfoContext";
 import { UserCartStore } from "./UserCartContext";
 import { useContext, useState } from "react";
-import { Data } from "./Products";
+import { data } from "./Products";
 import { useNavigate } from "react-router-dom";
 
 export default function Option() {
@@ -13,16 +13,16 @@ export default function Option() {
   const [inputValue, setInputValue] = useState("");
   const [keywords, setKeywords] = useState([]);
   const [search, setSearch] = useState(false);
-  const CollectData = [].concat(
-    Data.accessory.items,
-    Data.fashion.items,
-    Data.digital.items
+  const Collectdata = [].concat(
+    data.accessory.items,
+    data.fashion.items,
+    data.digital.items
   );
   const cart = () => {
     navigate("/cart");
   };
 
-  CollectData.map((item) => {
+  Collectdata.map((item) => {
     item.title = item.title.toLowerCase();
     return item;
   });
@@ -37,7 +37,7 @@ export default function Option() {
     e.preventDefault();
     setInputValue(e.target.value);
 
-    let list = CollectData.filter((item) => {
+    let list = Collectdata.filter((item) => {
       if (item.title.includes(e.target.value)) {
         return <li>{item.title}</li>;
       }
@@ -53,9 +53,9 @@ export default function Option() {
   const UserInfo = useContext(UserInfoContextStore);
   const UserCart = useContext(UserCartStore);
 
-  const cartCountData = UserCart.cart.map((item) => item.amount);
+  const cartCountdata = UserCart.cart.map((item) => item.amount);
   const cartCount =
-    UserCart.cart.length > 0 ? cartCountData.reduce((a, b) => a + b) : 0;
+    UserCart.cart.length > 0 ? cartCountdata.reduce((a, b) => a + b) : 0;
 
   const icon =
     UserInfo.themeMode === "dark" ? (
