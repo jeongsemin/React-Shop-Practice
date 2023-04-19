@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.flexbox {
+  display: flex;
+  transform: translate3d(-100%, 0px, 0px);
+  transition-duration: 350ms;
+}
+
+.flexbox > img {
+  width: 100%;
+  height: 700px;
+  flex: none;
+}
+
+.carousel {
+  width: 100%;
+  position: absolute;
+  background: none;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel > .icon {
+  color: rgb(37, 37, 37);
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  height: 700px;
+}
+
+.carousel > .icon:hover {
+  background: #6e6e6e;
+  opacity: 30%;
+}
